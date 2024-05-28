@@ -1,0 +1,39 @@
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+    padding: 2px;
+}
+
+.icon:hover{
+    border: 0.5px solid rgba(189, 189, 189, 0.5);
+    background-color: rgba(189, 189, 189, 0.3);
+}
+
+.AppIcon {
+    width: 50px;
+    height: 50px;
+}
+
+.text {
+
+    margin-top: 5px;
+    margin-bottom: 0;
+
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-height: 1.5;
+    text-align: left;
+    vertical-align: baseline;
+    text-shadow: black 1px 1px;
+}

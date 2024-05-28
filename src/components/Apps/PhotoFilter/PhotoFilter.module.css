@@ -1,0 +1,48 @@
+.file {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+}
+
+.thisApp {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.ui {
+    height: 100%;
+    min-width: 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 5px 10px 5px 5px;
+}
+.fileButton {
+    height: 100%;
+    padding: 0 5px 0 5px;
+}
+
+.canvasContainer {
+    height: 100%;
+}
+.canvas {
+    flex-grow: 1;
+    width: 500px;
+    height: 500px;
+    background-color: rgb(149, 149, 149);
+}
+
+.params {
+    height: 100%;
+    min-width: 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 5px;
+}

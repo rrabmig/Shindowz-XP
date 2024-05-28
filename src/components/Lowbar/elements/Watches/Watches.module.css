@@ -1,0 +1,16 @@
+.Watches {
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-left: 5px;
+    margin-right: 15px;
+
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: small;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-height: 1.5;
+    text-align: left;
+    vertical-align: baseline;
+    text-shadow: black 1px 1px;
+}

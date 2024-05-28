@@ -1,5 +1,17 @@
 .App {
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url('/public/images/background.jpg');
+  background-size:cover;
+  overflow-x:auto;
+  overflow-y: hidden;
+
 }
 
 .App-logo {

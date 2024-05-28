@@ -1,0 +1,59 @@
+.Bar {
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(0deg, rgba(38,99,212,1) 0%, rgba(35,92,222,1) 46%, rgba(40,96,224,1) 100%);
+
+    align-self: end;
+    z-index: 90;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.startButton {
+    width: 100px;
+    height: 100%;
+    background: #1a941f;
+    background: linear-gradient(110deg, rgba(35,103,51,1) 0%, rgba(41,152,39,1) 40%, rgba(18,130,24,1) 90%);
+
+    border-radius: 90% 10% 10% 90% / 0% 50% 50% 0%;
+    border: rgba(7,89,75, 0.3) 1px solid;
+
+    cursor: pointer;
+}
+
+.tabsContainer {
+    flex-grow: 1;
+    padding-left: 20px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.startText {
+    color: white;
+    font-size: large;
+    font-style: italic;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 6px;
+}
+
+.rightBar {
+    width: 100px;
+    min-width: 100px;
+    height: 100%;
+    background: rgb(11,172,230);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    padding-left: 5px;
+
+}
