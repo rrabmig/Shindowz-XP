@@ -1,20 +1,27 @@
 import React from 'react'
 import classes from './icon.module.css'
 
-const Icon = ({label, handleClick}) => {
+import { launchApp } from '../../stateManager/LaunchedAppsSlice'
+import { useDispatch } from 'react-redux'
+
+import icons from '../../constats';
+
+const Icon = ({app, top, left, imageSrc}) => {
+  const dispatch = useDispatch()
 
   return (
-    <div 
-        className={classes.icon}
-        onClick={handleClick}    
+    <div
+      style={{top:top, left:left}} 
+      className={classes.icon}
+      onClick={() => dispatch(launchApp({app:`${app}`, icon:''}))}    
     >
         <img
-            src='./images/Icon_4.ico'
+            src={icons[app]}
             className = {classes.AppIcon}
             alt='icon'
         />
         <p className={classes.text}>
-            {label}
+            {app}
         </p>
     </div>
   )

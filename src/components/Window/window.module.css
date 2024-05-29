@@ -10,3 +10,7 @@
     height: fit-content;
     padding: 5px;
 }
+
+.focused {
+    z-index: 2
+}

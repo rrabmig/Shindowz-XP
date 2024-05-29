@@ -4,43 +4,38 @@ import './App.css';
 
 import Window from './components/Window/Window';
 import Icon from './components/Icon/Icon';
-import AlreadyOpened from './components/Modals/AlreadyOpened/AlreadyOpened';
 import LowBar from './components/Lowbar/LowBar';
+import ErrorModal from './components/Modals/ErrorModal';
+
+import {useDispatch, useSelector } from 'react-redux';
+import Menu from './components/menu/Menu';
+import { hideMenu } from './stateManager/LaunchedAppsSlice';
+
 
 function App() {
-  const background = useRef()
-  const [showWindow, setShowWindow] = useState(false)
-
-  const [showAlreadyOpened, setShowAlreadyOpened] = useState(false)
-
-  function clickIcon() {
-    if (showWindow) {
-      setShowAlreadyOpened(true)
-      const errSound = new Audio('sounds/erro.mp3')
-      errSound.play()
-    } else {
-      setShowWindow(true)
-    }
-  }
+  const dispatch = useDispatch()
+  const showError = useSelector(state => state.error.show)
+  const apps = useSelector(state => state.apps.apps)
+  const menu = useSelector(state => state.apps.menu)
 
   return (
-    <div className="App" ref={background}>
-      <Icon label={'PhotoFilterXP'} handleClick={clickIcon}/>
+    <div 
+      className="App"
+      onClick={()=>dispatch(hideMenu())}
+    >
+      <Icon app={'PhotoFilter'} top={'50%'} left={'200px'}/>
+      <Icon app={'test'} top={'30%'} left={'200px'} imageSrc={'./images/Icon_4.ico'}/>
       
-      {showWindow &&
-        <Window 
-          background={background.current}
-          onClose={() => {setShowWindow(false)}}
-          app = 'PhotoFilter'
-        />
+      {apps.map(app => <Window app={app}/>)}
+
+      {showError &&
+        <ErrorModal/>
       }
 
-      {showAlreadyOpened &&
-        <AlreadyOpened
-          onClose = {() => {setShowAlreadyOpened(false)}}
-        />
+      {menu &&
+        <Menu/>
       }
-
+      
       <LowBar/>
     </div>
   );

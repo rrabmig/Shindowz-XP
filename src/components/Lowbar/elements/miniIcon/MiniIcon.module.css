@@ -1,0 +1,21 @@
+.MiniIcon {
+    width: 50px;
+    background-color: rgba(12, 12, 12, 0.5);
+    height: 100%;
+    margin: 0px 10px 0px 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;
+}
+
+.focused {
+    margin-top: -5px;
+    height: calc(100% + 5px);
+    border-top: 5px solid rgba(12, 12, 12, 0.5);
+}
+
+.icon {
+    height: 100%;
+}

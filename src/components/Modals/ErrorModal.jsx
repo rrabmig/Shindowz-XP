@@ -1,6 +1,13 @@
 import React from 'react'
 
-const AlreadyOpened = ({onClose}) => {
+import { useSelector, useDispatch } from 'react-redux'
+import { hideError } from '../../stateManager/ErrorSlice'
+
+const ErrorModal = () => {
+    const message = useSelector((state) => state.error.message)
+    const dispatch = useDispatch()
+
+
   return (
     <div
         style={{height:'100%', width:'100%', zIndex:10}}
@@ -17,18 +24,18 @@ const AlreadyOpened = ({onClose}) => {
                 <button 
                     aria-label="Close"
                     onClick={(e)=>{
-                        onClose()
+                        dispatch(hideError())
                         e.stopPropagation()
                     }}
                 />
                 </div>
             </div>
             <div className="window-body">
-                <p>This app is already opened</p>
+                <p>{message}</p>
             </div>
         </div>
     </div>
   )
 }
 
-export default AlreadyOpened
+export default ErrorModal

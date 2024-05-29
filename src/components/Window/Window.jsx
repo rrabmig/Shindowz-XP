@@ -2,9 +2,15 @@ import React, { useEffect, useRef} from 'react'
 import classes from './window.module.css'
 import PhotoFilter from '../Apps/PhotoFilter/PhotoFilter'
 
-const Window = ({onClose, app}) => {
+import { closeApp, focusApp } from '../../stateManager/LaunchedAppsSlice'
+import { useDispatch, useSelector } from 'react-redux'
+
+const Window = ({app}) => {
   let bar = useRef()
   let win = useRef()
+  let focused = useSelector(state => state.apps.focused)
+
+  let dispatch = useDispatch()
 
   useEffect(() => {
     win.current.style.left = '200px'
@@ -34,15 +40,24 @@ const Window = ({onClose, app}) => {
 
   return (
     <div 
-      className={['window', classes.Window].join(' ')}
+      className={['window', classes.Window, focused == app? classes.focused : ''].join(' ')}
       ref={win}
+      onClick={(e)=>{
+        dispatch(focusApp({app:app}))
+        e.stopPropagation()
+      }}
     >
       <div className="title-bar" ref={bar} style={{cursor: "move"}}>
         <div className="title-bar-text"> {app} </div>
         <div className="title-bar-controls">
-          <button aria-label="Close" onClick={onClose} style={{cursor:'pointer'}}/>
+          <button 
+            aria-label="Close" 
+            onClick={() => dispatch(closeApp({app:`${app}`}))} 
+            style={{cursor:'pointer'}}
+          />
         </div>
       </div>
+
       <div className={['window-body', classes.WindowBody].join(' ')}>
         {thisApp}
       </div>
