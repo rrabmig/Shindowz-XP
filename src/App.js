@@ -25,6 +25,7 @@ function App() {
     >
       <Icon app={'PhotoFilter'} top={'50%'} left={'200px'}/>
       <Icon app={'test'} top={'30%'} left={'200px'} imageSrc={'./images/Icon_4.ico'}/>
+      <Icon app={'calculator'} top={'30%'} left={'300px'} imageSrc={'./images/Icon_4.ico'}/>
       
       {apps.map(app => <Window app={app}/>)}
 

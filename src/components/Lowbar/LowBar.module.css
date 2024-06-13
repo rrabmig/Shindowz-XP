@@ -21,7 +21,7 @@
     background: #1a941f;
     background: linear-gradient(110deg, rgba(35,103,51,1) 0%, rgba(41,152,39,1) 40%, rgba(18,130,24,1) 90%);
 
-    border-radius: 90% 10% 10% 90% / 0% 50% 50% 0%;
+    border-radius: 90% 10% 20% 80% / 0% 40% 60% 0%;
     border: rgba(7,89,75, 0.3) 1px solid;
 
     cursor: pointer;

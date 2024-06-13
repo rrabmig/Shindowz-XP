@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { showNewError } from "./ErrorSlice";
+import errorReducer from './ErrorSlice'
 
-const initialState = {apps: [], focused: '', menu: false}
+const initialState = {apps: [], focused: '', menu: false, volume: false}
 
 export const LaunchedAppsSlice = createSlice({
     name: 'apps',
@@ -9,7 +10,8 @@ export const LaunchedAppsSlice = createSlice({
     reducers: {
         launchApp(state, action) {
             if (state.apps.includes(action.payload.app)) {
-                showNewError("App already launched");
+                // error
+                // do nothing
             } else {
                 state.apps.push(action.payload.app)
                 state.focused = action.payload.app
@@ -17,7 +19,7 @@ export const LaunchedAppsSlice = createSlice({
             }
         },
         closeApp(state, action) {
-            state.apps = state.apps.filter(x => x != action.payload.app)
+            state.apps = state.apps.filter(x => x !== action.payload.app)
         },
         focusApp(state, action) {
             state.focused = action.payload.app
@@ -28,10 +30,14 @@ export const LaunchedAppsSlice = createSlice({
         },
         hideMenu (state, action) {
             state.menu = false
+            state.volume = false
+        },
+        showVolume (s, a) {
+            s.volume = !s.volume
         }
     }
 })
 
-export const {launchApp, closeApp, focusApp, showMenu, hideMenu} = LaunchedAppsSlice.actions
+export const {launchApp, closeApp, focusApp, showMenu, hideMenu, showVolume} = LaunchedAppsSlice.actions
 
 export default LaunchedAppsSlice.reducer

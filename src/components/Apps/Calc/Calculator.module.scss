@@ -1,0 +1,74 @@
+.Calculator {
+    width: fit-content;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+.input {
+    width: 90%;
+}
+
+
+.buttonstContainer {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+
+}
+
+.longButtons {
+    grid-column-start: 1;
+    grid-column-end: 7;
+
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+
+    .empty {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    
+    .backspace {
+        grid-column-start: 3;
+        grid-column-end: 6;
+    }
+    
+    .CE {
+        grid-column-start: 6;
+        grid-column-end: 9;
+    }
+    
+    .C {
+        grid-column-start: 9;
+        grid-column-end: 12;
+    }
+}
+
+
+
+.normal {
+
+}
+
+
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+
+button {
+    min-width: none;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}

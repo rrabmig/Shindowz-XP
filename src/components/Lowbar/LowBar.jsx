@@ -6,6 +6,7 @@ import { useSelector, useDispatch  } from 'react-redux'
 import { showMenu } from '../../stateManager/LaunchedAppsSlice'
 
 import MiniIcon from './elements/miniIcon/MiniIcon'
+import Volume from './elements/Volume/Volume'
 
 const LowBar = () => {
     const dispatch = useDispatch()
@@ -26,7 +27,7 @@ const LowBar = () => {
             {apps.map(app => <MiniIcon app={app} focused={focused === app}/>)}
         </div>
         <div className={classes.rightBar}>
-            
+            <Volume/>
             <Watches/>
         </div>
     </div>

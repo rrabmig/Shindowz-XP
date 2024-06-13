@@ -3,11 +3,13 @@
     top: 200px;
     left: 200px;
     width: fit-content;
+    height: fit-content;
     z-index: 1;
 }
 
 .WindowBody {
     height: fit-content;
+    width: fit-content;
     padding: 5px;
 }
 

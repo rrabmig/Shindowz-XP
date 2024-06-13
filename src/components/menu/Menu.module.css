@@ -12,11 +12,35 @@
     flex-direction: column;
     justify-content: space-around;
     border-radius: 10px 10px 0 0;
+    box-shadow: 3px 3px 0px 0px rgba(19, 20, 25, 0.2);
 }
-.middle {
-    height: 300px;
-    width: 100%;
 
+.user{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center
+}
+
+.userImg {
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    margin: 10px 20px 10px 20px;
+}
+
+.userName {
+    font-size: medium;
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+
+    text-shadow: black 1px 1px;
+}
+
+.middle {
+    width: 100%;
+    flex-grow: 1;
     display: flex;
     flex-direction: row;
 }
@@ -24,11 +48,76 @@
     width: 50%;
     background: #ffffff;
 }
+.leftTab {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 10px 0 10px;
+}
+.leftTabImg {
+    width: 35px;
+    height: 35px;
+}
+.leftTabTXT {
+    font-size: small;
+    color: #000000;
+    margin: 0 10px 0 10px;
+
+    font-family: Arial, sans-serif;
+
+    text-shadow: black 1px 1px;
+}
+
 .right {
     width: 50%;
     background: #d3e5fb;
 
 }
-.buttons {
 
+.rightTab {
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 10px 0 10px;
+}
+
+.rightTabImg {
+    width: 25px;    
+    height: 25px;
+}   
+
+.rightTabTXT {
+    font-size: small;
+    color: #14172c;
+    margin: 0 10px 0 10px;
+
+    font-family: Arial, sans-serif;
+
+    text-shadow: black 1px 1px;
+}
+
+.buttons {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    padding: 0 10px 0 10px;
+}
+
+.buttonImg {
+    width: 35px;
+    height: 35px;
+}
+
+.buttonTXT {
+    font-size: small;
+    color: #ffffff;
+    margin: 0 10px 0 10px;
+
+    font-family: Arial, sans-serif;
+
+    text-shadow: black 1px 1px;
 }

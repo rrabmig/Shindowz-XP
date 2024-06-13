@@ -1,0 +1,28 @@
+.volume {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.button{
+    align-self: self-end;
+}
+
+.shown {
+    margin-top: calc(-100px - (30px - 10px)/2);
+}
+
+.inputContainer {
+    background-color: rgb(40, 40, 34);
+}
+.input {
+    writing-mode: vertical-lr;
+    direction: rtl;
+    appearance: slider-vertical;
+    width: 16px;
+    height: 100px;
+    vertical-align:bottom;
+}

@@ -1,10 +1,17 @@
 import React, {useState, useRef} from 'react'
 import classes from './PhotoFilter.module.css'
 import { saveAs } from 'file-saver';
+import Filters from './Modes/Filters';
+import Paint from './Modes/Paint';
+
+
+const MAX = 500
+
 
 const PhotoFilter = () => {
   let canvas = useRef()
   const [mode, setmode] = useState(null)
+  const [stack, setStack] = useState([])
 
   function handleImageLoad (e) {
     clearCanvas()
@@ -20,10 +27,28 @@ const PhotoFilter = () => {
 
       imageElement.addEventListener("load", () => {
           const ctx = canvas.current.getContext('2d')
-          ctx.drawImage(imageElement, 0, 0, 200, 200)
+          let width = imageElement.width
+          let height = imageElement.height
+
+          let w = imageElement.width
+          let h = imageElement.height
+
+          if (width > height) {
+            if (width > MAX) {
+              height *= MAX / width
+              width = MAX
+            }
+          } else {
+            if (height > MAX) {
+              width *= MAX / height
+              height = MAX
+            }
+          }
+          imageElement.width = 100
+          imageElement.height = 100
+          ctx.drawImage(imageElement, 0, 0, 100, 100)
       })
     })
-
     reader.readAsDataURL(file)
   }
 
@@ -66,11 +91,11 @@ const PhotoFilter = () => {
 
         <hr/>
 
-        <button >
+        <button onClick={() => setmode('filters')}>
           Filters
         </button>
 
-        <button >
+        <button onClick={() => setmode('paint')}>
           Paint
         </button>
 
@@ -85,15 +110,19 @@ const PhotoFilter = () => {
 
 
       <div className={classes.canvasContainer}>
-        <canvas className={classes.canvas} ref={canvas}>
-
-        </canvas>
+        <canvas className={classes.canvas} ref={canvas}/>
       </div>
 
 
 
       <div className={classes.params}>
-          <button>jdj</button>
+        {mode === 'filters' &&
+          <Filters/>
+        }
+
+        {mode === 'paint' && 
+          <Paint/>
+        }
       </div>
     </div>
   )

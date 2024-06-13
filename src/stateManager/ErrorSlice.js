@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {show: false, message: ''}
 
-export const errorSlice = createSlice({
+const errorSlice = createSlice({
     name: 'error',
     initialState,
     reducers: {

@@ -1,9 +1,9 @@
 import React, { useEffect, useRef} from 'react'
 import classes from './window.module.css'
-import PhotoFilter from '../Apps/PhotoFilter/PhotoFilter'
 
 import { closeApp, focusApp } from '../../stateManager/LaunchedAppsSlice'
 import { useDispatch, useSelector } from 'react-redux'
+import appsMap from '../Apps/appsMap'
 
 const Window = ({app}) => {
   let bar = useRef()
@@ -30,17 +30,9 @@ const Window = ({app}) => {
     win.current.style.top = `${parseInt(win.current.style.top) + movementY}px`
   }
 
-  let thisApp
-  switch (app) {
-    case 'PhotoFilter':
-      thisApp = <PhotoFilter/>
-      break
-    default:
-  }
-
   return (
     <div 
-      className={['window', classes.Window, focused == app? classes.focused : ''].join(' ')}
+      className={['window', classes.Window, focused === app? classes.focused : ''].join(' ')}
       ref={win}
       onClick={(e)=>{
         dispatch(focusApp({app:app}))
@@ -59,7 +51,7 @@ const Window = ({app}) => {
       </div>
 
       <div className={['window-body', classes.WindowBody].join(' ')}>
-        {thisApp}
+        {appsMap.get(app)}
       </div>
     </div>
   )
