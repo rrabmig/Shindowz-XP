@@ -53,7 +53,7 @@
 
 
 .normal {
-
+    width: 20px;
 }
 
 
@@ -66,9 +66,9 @@
     color: blue;
 }
 
-button {
+.button {
     min-width: none;
     padding: 0;
-    width: 100%;
+    width: 50%;
     height: 100%;
 }

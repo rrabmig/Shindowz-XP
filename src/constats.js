@@ -11,7 +11,6 @@ const icons = {
 
     'turnOff': turnOff,
     'LogOff': LogOff,
-    
 }
 
 export default icons

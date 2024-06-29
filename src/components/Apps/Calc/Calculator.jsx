@@ -4,8 +4,7 @@ import classes from './Calculator.module.scss'
 import { useState } from 'react'
 
 const Calculator = () => {
-    const [value, setvalue] = useState('')
-
+    const [value, setValue] = useState('')
 
   return (
     <div className={classes.Calculator}>
@@ -14,42 +13,42 @@ const Calculator = () => {
             value={value} 
             type="text" 
             className={classes.input}
-            onChange={(e) => {}}
+            onChange={e => {}}
             onFocus={e => {}}
         />
 
         <div className={classes.buttonstContainer}>
             <div className={classes.longButtons}>
                 <div className={classes.empty}/>
-                <div className={classes.backspace}> <button>
+                <button className={classes.backspace}>
                     Backspace
-                </button></div>
-                <div className={classes.CE}> <button>
+                </button>
+                <button className={classes.CE}>
                     CE
-                </button></div>
-                <div className={classes.C}> <button>
+                </button>
+                <button className={classes.C}>
                     C
-                </button></div>
+                </button>
             </div>
             
-            <div className={classes.normal}> <button>
+            <button className={classes.normal}>
                 MC
-            </button></div>
+            </button>
             <div className={classes.normal}> <button>
                 7
             </button></div>
-            <div className={classes.normal}> <button>
+            <button className={classes.normal}> 
                 8
-            </button></div>
-            <div className={classes.normal}> <button>
+            </button>
+            <button className={classes.normal}>
                 9
-            </button></div>
-            <div className={classes.normal}> <button>
+            </button>
+            <button className={classes.normal}>
                 /
-            </button></div>
-            <div className={classes.normal}> <button>
+            </button>
+            <button className={classes.normal}>
                 sqrt
-            </button> </div>
+            </button>
             
             <div className={classes.normal}> <button>MR</button></div>
             <div className={classes.normal}> <button>4</button></div>

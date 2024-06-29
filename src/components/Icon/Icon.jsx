@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux'
 
 import icons from '../../constats';
 
-const Icon = ({app, top, left, imageSrc}) => {
+const Icon = ({app, top, left}) => {
   const dispatch = useDispatch()
 
   return (
