@@ -27,8 +27,7 @@
 Читать файл Contribute.md
 
 ## Лицензия
-
-В процессе
+MIT License
 
 # EN
 
