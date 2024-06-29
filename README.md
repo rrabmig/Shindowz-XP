@@ -51,5 +51,5 @@ To use this project, follow these steps:
 Check Contribute.md
 
 ## License
+MIT License
 
-In process...
